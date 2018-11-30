@@ -1,5 +1,6 @@
 package qmw.sell.dao;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class ProductCategoryRepositoryTest {
     private ProductCategoryRepository repository;
 
     @Test
-    public void saveTest(){
+    public void saveTest() {
         ProductCategory productCategory = new ProductCategory();
         productCategory.setCategoryId(2);
         productCategory.setCategoryName("女生最爱");
@@ -29,17 +30,19 @@ public class ProductCategoryRepositoryTest {
         repository.save(productCategory);
         System.out.println(productCategory);
     }
+
     @Test
-    public void findOneTest(){
+    public void findOneTest() {
         Optional<ProductCategory> byId = repository.findById(1);
         ProductCategory productCategory = byId.get();
         System.out.println(productCategory);
     }
+
     @Test
-    public void findAllByCategoryTypeInTest(){
-        List<Integer> list = Arrays.asList(2,3,4);
+    public void findAllByCategoryTypeInTest() {
+        List<Integer> list = Arrays.asList(2, 3, 4);
         List<ProductCategory> result = repository.findAllByCategoryTypeIn(list);
-        Assert.assertNotEquals(0,result.size());
+        Assert.assertNotEquals(0, result.size());
     }
 
 }
