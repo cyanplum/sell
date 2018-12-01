@@ -5,7 +5,9 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-
+/**
+ * 卖家商品数据
+ * */
 @Entity
 @Data
 public class ProductInfo {
