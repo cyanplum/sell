@@ -2,6 +2,7 @@ package qmw.sell.dataobject;
 
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 import qmw.sell.enums.OrderStatusEnum;
 import qmw.sell.enums.PayStatusEnum;
 
@@ -10,8 +11,11 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 
+
+/**订单实体*/
 @Entity
 @Data
+@DynamicUpdate
 public class OrderMaster {
 
     /**订单ID*/
@@ -19,7 +23,7 @@ public class OrderMaster {
     private String orderId;
 
     /** 买家名字*/
-    private String orderName;
+    private String buyerName;
 
     /** 买家手机号码*/
     private String buyerPhone;
